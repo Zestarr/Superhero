@@ -15,9 +15,7 @@ public final class Main extends JavaPlugin {
         saveDefaultConfig();
 
         Bukkit.getPluginManager().registerEvents(new ChatEvent(), this);
-
-
-
+        
     }
 
     @Override
