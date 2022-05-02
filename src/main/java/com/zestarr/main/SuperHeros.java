@@ -27,7 +27,6 @@ public enum SuperHeros {
         this.name = name;
         this.weakness = weakness;
     }
-
     
     public String getTraits() { return traits; }
 
