@@ -1,0 +1,2 @@
+CustomChat: true
+ChatFormat: '&7%s &7» &f%s' # The first %s is the player's name, the second is the message, both are surrounded by color codes (&)
