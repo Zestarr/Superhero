@@ -1,5 +1,6 @@
 package com.zestarr.main;
 
+import com.zestarr.main.Commands.WardrobeCommand;
 import com.zestarr.main.Events.ChatEvent;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -15,6 +16,7 @@ public final class Main extends JavaPlugin {
         saveDefaultConfig();
 
         Bukkit.getPluginManager().registerEvents(new ChatEvent(), this);
+        getCommand("wardrobe").setExecutor(new WardrobeCommand());
 
 
 
