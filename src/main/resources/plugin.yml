@@ -1,0 +1,6 @@
+name: Main
+version: '${project.version}'
+main: com.zestarr.main.Main
+api-version: 1.18
+authors: [ Zestarr ]
+description: Superhero Plugin
