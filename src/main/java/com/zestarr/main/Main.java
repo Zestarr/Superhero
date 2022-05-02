@@ -18,8 +18,6 @@ public final class Main extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new ChatEvent(), this);
         getCommand("wardrobe").setExecutor(new WardrobeCommand());
 
-
-
     }
 
     @Override
