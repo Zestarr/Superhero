@@ -32,7 +32,7 @@ public class FireballCommand implements CommandExecutor {
                             double z = Math.sin(a) * radius;
 
                             location.add(x, height, z);
-                            location.getWorld().spawnParticle(Particle.SMALL_FLAME, location, 1);
+                            location.getWorld().spawnParticle(Particle.DOLPHIN, location, 1);
                             location.subtract(x, height, z);
                         }
                     }
