@@ -67,6 +67,7 @@ SUPERGIRL:
   health: 40
   damage: 4
   speed: 0.2
+  weakness: ''
 
 BATMAN:
   Name: 'Batman'

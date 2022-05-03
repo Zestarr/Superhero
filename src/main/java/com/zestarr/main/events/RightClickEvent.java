@@ -1,7 +1,5 @@
-package com.zestarr.main.Events;
+package com.zestarr.main.events;
 
-import com.zestarr.main.Main;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Particle;
@@ -10,7 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.plugin.java.JavaPlugin;
 
 public class RightClickEvent implements Listener {
 

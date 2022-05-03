@@ -1,10 +1,10 @@
-package com.zestarr.main.Wardrobe;
+package com.zestarr.main.wardrobe;
 
-import com.zestarr.main.SuperHero;
+import com.zestarr.main.Main;
+import com.zestarr.main.superHero.SuperHeroConfig;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,6 +19,12 @@ import java.util.List;
 import static com.zestarr.main.Main.format;
 
 public class WardrobeListener implements Listener{
+
+    private Main main;
+
+    public WardrobeListener(Main main) {
+        this.main = main;
+    }
 
     @EventHandler
     public void onClick(InventoryClickEvent e) {
@@ -35,7 +41,7 @@ public class WardrobeListener implements Listener{
                 }
                 switch (e.getRawSlot()) {
                     case 36: // Civilian
-                        SuperHero CIVILIAN = SuperHero.CIVILIAN;
+                        SuperHeroConfig CIVILIAN = new SuperHeroConfig(main, "CIVILIAN");
 
                         player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(CIVILIAN.getHealth());
                         player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(CIVILIAN.getSpeed());
@@ -46,7 +52,7 @@ public class WardrobeListener implements Listener{
 
                         break;
                     case 37: // Hulk
-                        SuperHero HULK = SuperHero.HULK;
+                        SuperHeroConfig HULK = new SuperHeroConfig(main, "HULK");
 
                         player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(HULK.getHealth());
                         player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(HULK.getSpeed());
@@ -58,7 +64,7 @@ public class WardrobeListener implements Listener{
 
                         break;
                     case 38: // Dr. Strange
-                        SuperHero DRSTRANGE = SuperHero.DRSTRANGE;
+                        SuperHeroConfig DRSTRANGE = new SuperHeroConfig(main, "DRSTRANGE");
 
                         player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(DRSTRANGE.getHealth());
                         player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(DRSTRANGE.getSpeed());
@@ -69,7 +75,7 @@ public class WardrobeListener implements Listener{
 
                         break;
                     case 39: // Hawk Eye
-                        SuperHero HAWKEYE = SuperHero.HAWKEYE;
+                        SuperHeroConfig HAWKEYE = new SuperHeroConfig(main, "HAWKEYE");
 
                         player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(HAWKEYE.getHealth());
                         player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(HAWKEYE.getSpeed());
@@ -80,7 +86,7 @@ public class WardrobeListener implements Listener{
 
                         break;
                     case 40: // Professor X
-                        SuperHero PROFESSORX = SuperHero.PROFESSORX;
+                        SuperHeroConfig PROFESSORX = new SuperHeroConfig(main, "PROFESSORX");
 
                         player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(PROFESSORX.getHealth());
                         player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(PROFESSORX.getSpeed());
@@ -91,7 +97,7 @@ public class WardrobeListener implements Listener{
 
                         break;
                     case 41: // Deadpool
-                        SuperHero DEADPOOL = SuperHero.DEADPOOL;
+                        SuperHeroConfig DEADPOOL = new SuperHeroConfig(main, "DEADPOOL");
 
                         player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(DEADPOOL.getHealth());
                         player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(DEADPOOL.getSpeed());
@@ -102,7 +108,7 @@ public class WardrobeListener implements Listener{
 
                         break;
                     case 42: // Flash
-                        SuperHero FLASH = SuperHero.FLASH;
+                        SuperHeroConfig FLASH = new SuperHeroConfig(main, "FLASH");
 
                         player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(FLASH.getHealth());
                         player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(FLASH.getSpeed());
@@ -113,7 +119,7 @@ public class WardrobeListener implements Listener{
 
                         break;
                     case 43: // Super girl
-                        SuperHero SUPERGIRL = SuperHero.SUPERGIRL;
+                        SuperHeroConfig SUPERGIRL = new SuperHeroConfig(main, "SUPERGIRL");
 
                         player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(SUPERGIRL.getHealth());
                         player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(SUPERGIRL.getSpeed());
@@ -125,7 +131,7 @@ public class WardrobeListener implements Listener{
 
                         break;
                     case 44: // Batman
-                        SuperHero BATMAN = SuperHero.BATMAN;
+                        SuperHeroConfig BATMAN = new SuperHeroConfig(main, "BATMAN");
 
                         player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(BATMAN.getHealth());
                         player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(BATMAN.getSpeed());

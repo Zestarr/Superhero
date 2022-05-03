@@ -1,4 +1,4 @@
-package com.zestarr.main.Events;
+package com.zestarr.main.events;
 
 import com.zestarr.main.Main;
 import org.bukkit.ChatColor;
