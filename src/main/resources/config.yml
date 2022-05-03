@@ -1,2 +1,78 @@
 CustomChat: true
-ChatFormat: '&7%s &7» &f%s' # The first %s is the player's name, the second is the message, both are surrounded by color codes (&)
+ChatFormat: '&7%s &8» &f%s' # The first %s is the player's name, the second is the message, both are surrounded by color codes (&)
+
+PowerupSlot: 4 # Hotbar slot 0-8 (0 being slot #1), do not choose another number more or less than that or else you will have a big issue8
+
+# Superheroes Below!
+
+CIVILIAN:
+  Name: 'Civilian'
+  Traits: 'Nothing'
+  health: 20
+  damage: 1
+  speed: 0.1
+  weakness: ''
+
+HULK:
+  Name: 'Hulk'
+  Traits: 'Melee'
+  health: 50
+  damage: 7
+  speed: 0.05
+  weakness: ''
+
+DRSTRANGE:
+  Name: 'Dr. Strange'
+  Traits: 'Magic'
+  health: 20
+  damage: 1
+  speed: 0.13
+  weakness: ''
+
+HAWKEYE:
+  Name: 'Hawkeye'
+  Traits: 'Ranged'
+  health: 20
+  damage: 2.5
+  speed: 0.11
+  weakness: ''
+
+PROFESSORX:
+  Name: 'Professor X'
+  Traits: 'IQ/Healing'
+  health: 35
+  damage: 1
+  speed: 0.1
+  weakness: ''
+
+DEADPOOL:
+  Name: 'Deadpool'
+  Traits: 'Stealth'
+  health: 40
+  damage: 2
+  speed: 0.17
+  weakness: ''
+
+FLASH:
+  Name: 'Flash'
+  Traits: 'Speed'
+  health: 25
+  damage: 5
+  speed: 0.5
+  weakness: ''
+
+SUPERGIRL:
+  Name: 'Supergirl'
+  Traits: 'Alien'
+  health: 40
+  damage: 4
+  speed: 0.2
+
+BATMAN:
+  Name: 'Batman'
+  Traits: 'Billionaire'
+  health: 20
+  damage: 3
+  speed: 0.13
+  weakness: ''
+

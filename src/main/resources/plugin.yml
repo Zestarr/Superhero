@@ -4,3 +4,13 @@ main: com.zestarr.main.Main
 api-version: 1.18
 authors: [ Zestarr ]
 description: Superhero Plugin
+commands:
+  wardrobe:
+    permission: superhero.wardrobe
+    description: Opens the Superhero Wardrobe
+  fireball:
+    description: Summons a fireball
+    permission: op
+  Powerup:
+    permission: superhero.powerup
+    description: Gives you a powerup

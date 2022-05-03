@@ -1,10 +1,10 @@
 package com.zestarr.main;
 
-public enum SuperHeros {
+public enum SuperHero {
 
     CIVILIAN("Civilian", "Nothing", 20, 1f, 0.1f, ""),
     HULK("Hulk", "Melee", 50, 7f, 0.05f, ""),
-    DRSTRANGE("Dr. Strange", "Magic", 20, 1f, 1f,"" ),
+    DRSTRANGE("Dr. Strange", "Magic", 20, 1f, .13f,"" ),
     HAWKEYE("Hawkeye", "Ranged", 20, 2.5f, 0.11f, ""),
     PROFESSORX("Professor X", "IQ/Healing", 35, 1f, 0.1f,""),
     DEADPOOL("DeadPool", "Stealth", 40, 2f, 0.17f, ""),
@@ -19,7 +19,7 @@ public enum SuperHeros {
     private String name;
     private String weakness;
 
-    SuperHeros(String name, String traits, Integer health, Float damage, Float speed, String weakness) {
+    SuperHero(String name, String traits, Integer health, Float damage, Float speed, String weakness) {
         this.traits = traits;
         this.health = health;
         this.damage = damage;
@@ -39,4 +39,5 @@ public enum SuperHeros {
     public String getName() { return name; }
 
     public String getWeakness() { return weakness; }
-}
+
+    }
