@@ -22,10 +22,10 @@ public class WardrobeListener implements Listener{
 
     private Main main;
 
+    final SuperHeroConfig configManager;
     public WardrobeListener(Main main) {
-        this.main = main;
+        configManager = new SuperHeroConfig(main);
     }
-
     @EventHandler
     public void onClick(InventoryClickEvent e) {
         Player player = (Player) e.getWhoClicked();
@@ -41,22 +41,20 @@ public class WardrobeListener implements Listener{
                 }
                 switch (e.getRawSlot()) {
                     case 36: // Civilian
-                        SuperHeroConfig CIVILIAN = new SuperHeroConfig(main, "CIVILIAN");
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(CIVILIAN.getHealth());
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(CIVILIAN.getSpeed());
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(CIVILIAN.getDamage());
+                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("CIVLIAN"));
+                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("CIVLIAN"));
+                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("CIVLIAN"));
 
                         player.setDisplayName(format("&cCivilian &7" + player.getName()));
                         player.sendMessage(format("&bYou have picked the &3Civilian &bclass"));
 
                         break;
                     case 37: // Hulk
-                        SuperHeroConfig HULK = new SuperHeroConfig(main, "HULK");
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(HULK.getHealth());
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(HULK.getSpeed());
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(HULK.getDamage());
+                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("HULK"));
+                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("HULK"));
+                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("HULK"));
 
                         player.setDisplayName(format("&cHulk &7" + player.getName()));
                         player.sendMessage(format("&bYou have picked the &3Hulk &bclass"));
@@ -64,66 +62,60 @@ public class WardrobeListener implements Listener{
 
                         break;
                     case 38: // Dr. Strange
-                        SuperHeroConfig DRSTRANGE = new SuperHeroConfig(main, "DRSTRANGE");
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(DRSTRANGE.getHealth());
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(DRSTRANGE.getSpeed());
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(DRSTRANGE.getDamage());
+                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("DRSTRANGE"));
+                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("DRSTRANGE"));
+                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("DRSTRANGE"));
 
                         player.setDisplayName(format("&cDr. Strange &7" + player.getName()));
                         player.sendMessage(format("&bYou have picked the &3Dr. Strange &bclass"));
 
                         break;
                     case 39: // Hawk Eye
-                        SuperHeroConfig HAWKEYE = new SuperHeroConfig(main, "HAWKEYE");
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(HAWKEYE.getHealth());
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(HAWKEYE.getSpeed());
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(HAWKEYE.getDamage());
+                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("HAWKEYE"));
+                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("HAWKEYE"));
+                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("HAWKEYE"));
 
                         player.setDisplayName(format("&cHawk Eye &7" + player.getName()));
                         player.sendMessage(format("&bYou have picked the &3Hawk Eye &bclass"));
 
                         break;
                     case 40: // Professor X
-                        SuperHeroConfig PROFESSORX = new SuperHeroConfig(main, "PROFESSORX");
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(PROFESSORX.getHealth());
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(PROFESSORX.getSpeed());
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(PROFESSORX.getDamage());
+                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("PROFESSORX"));
+                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("PROFESSORX"));
+                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("PROFESSORX"));
 
                         player.setDisplayName(format("&cProfessor X &7" + player.getName()));
                         player.sendMessage(format("&bYou have picked the &3Professor X &bclass"));
 
                         break;
                     case 41: // Deadpool
-                        SuperHeroConfig DEADPOOL = new SuperHeroConfig(main, "DEADPOOL");
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(DEADPOOL.getHealth());
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(DEADPOOL.getSpeed());
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(DEADPOOL.getDamage());
+                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("DEADPOOL"));
+                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("DEADPOOL"));
+                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("DEADPOOL"));
 
                         player.setDisplayName(format("&cDeadpool &7" + player.getName()));
                         player.sendMessage(format("&bYou have picked the &3Deadpool &bclass"));
 
                         break;
                     case 42: // Flash
-                        SuperHeroConfig FLASH = new SuperHeroConfig(main, "FLASH");
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(FLASH.getHealth());
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(FLASH.getSpeed());
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(FLASH.getDamage());
+                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("FLASH"));
+                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("FLASH"));
+                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("FLASH"));
 
                         player.setDisplayName(format("&cFlash &7" + player.getName()));
                         player.sendMessage(format("&bYou have picked the &3Flash &bclass"));
 
                         break;
                     case 43: // Super girl
-                        SuperHeroConfig SUPERGIRL = new SuperHeroConfig(main, "SUPERGIRL");
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(SUPERGIRL.getHealth());
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(SUPERGIRL.getSpeed());
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(SUPERGIRL.getDamage());
+                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("SUPERGIRL"));
+                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("SUPERGIRL"));
+                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("SUPERGIRL"));
                         player.setAllowFlight(true);
 
                         player.setDisplayName(format("&cSuper Girl &7" + player.getName()));
@@ -131,11 +123,10 @@ public class WardrobeListener implements Listener{
 
                         break;
                     case 44: // Batman
-                        SuperHeroConfig BATMAN = new SuperHeroConfig(main, "BATMAN");
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(BATMAN.getHealth());
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(BATMAN.getSpeed());
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(BATMAN.getDamage());
+                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("BATMAN"));
+                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("BATMAN"));
+                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("BATMAN"));
 
                         player.setDisplayName(format("&cBatman &7" + player.getName()));
                         player.sendMessage(format("&bYou have picked the &3Batman &bclass"));

@@ -6,36 +6,32 @@ public class SuperHeroConfig {
 
     private Main main;
 
-    private String superHero;
-
-    public SuperHeroConfig(Main main, String superHero) {
+    public SuperHeroConfig(Main main) {
         this.main = main;
-        this.superHero = superHero;
     }
 
-
-    public String getName() {
-        return main.getConfig().getString(this.superHero + ".Name");
+    public String getName(String superHero) {
+        return main.getConfig().getString(superHero + ".Name");
     }
 
-    public String getTraits() {
-        return main.getConfig().getString(this.superHero + ".Traits");
+    public String getTraits(String superHero) {
+        return main.getConfig().getString(superHero + ".Traits");
     }
 
-    public int getHealth() {
-        return main.getConfig().getInt(this.superHero + ".Health");
+    public int getHealth(String superHero) {
+        return main.getConfig().getInt(superHero + ".Health");
     }
 
-    public float getDamage() {
-        return main.getConfig().getInt(this.superHero + ".Damage");
+    public double getDamage(String superHero) {
+        return main.getConfig().getDouble(superHero + ".Damage");
     }
 
-    public float getSpeed() {
-        return main.getConfig().getInt(this.superHero + ".Speed");
+    public double getSpeed(String superHero) {
+        return main.getConfig().getDouble(superHero + ".Speed");
     }
 
-    public String getWeakness() {
-        return main.getConfig().getString(this.superHero + ".Weakness");
+    public String getWeakness(String superHero) {
+        return main.getConfig().getString(superHero + ".Weakness");
     }
 
 }
