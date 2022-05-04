@@ -42,94 +42,47 @@ public class WardrobeListener implements Listener{
                 switch (e.getRawSlot()) {
                     case 36: // Civilian
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("CIVLIAN"));
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("CIVLIAN"));
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("CIVLIAN"));
-
-                        player.setDisplayName(format("&cCivilian &7" + player.getName()));
-                        player.sendMessage(format("&bYou have picked the &3Civilian &bclass"));
+                        setAttribute(player, "CIVILIAN");
 
                         break;
                     case 37: // Hulk
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("HULK"));
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("HULK"));
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("HULK"));
-
-                        player.setDisplayName(format("&cHulk &7" + player.getName()));
-                        player.sendMessage(format("&bYou have picked the &3Hulk &bclass"));
-                        giveArmor(player, "HULK");
+                        setAttribute(player, "HULK");
 
                         break;
                     case 38: // Dr. Strange
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("DRSTRANGE"));
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("DRSTRANGE"));
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("DRSTRANGE"));
-
-                        player.setDisplayName(format("&cDr. Strange &7" + player.getName()));
-                        player.sendMessage(format("&bYou have picked the &3Dr. Strange &bclass"));
+                        setAttribute(player, "DRSTRANGE");
 
                         break;
                     case 39: // Hawk Eye
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("HAWKEYE"));
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("HAWKEYE"));
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("HAWKEYE"));
-
-                        player.setDisplayName(format("&cHawk Eye &7" + player.getName()));
-                        player.sendMessage(format("&bYou have picked the &3Hawk Eye &bclass"));
+                        setAttribute(player, "HAWKEYE");
 
                         break;
                     case 40: // Professor X
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("PROFESSORX"));
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("PROFESSORX"));
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("PROFESSORX"));
-
-                        player.setDisplayName(format("&cProfessor X &7" + player.getName()));
-                        player.sendMessage(format("&bYou have picked the &3Professor X &bclass"));
+                        setAttribute(player, "PROFESSORX");
 
                         break;
                     case 41: // Deadpool
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("DEADPOOL"));
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("DEADPOOL"));
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("DEADPOOL"));
-
-                        player.setDisplayName(format("&cDeadpool &7" + player.getName()));
-                        player.sendMessage(format("&bYou have picked the &3Deadpool &bclass"));
+                        setAttribute(player, "DEADPOOL");
 
                         break;
                     case 42: // Flash
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("FLASH"));
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("FLASH"));
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("FLASH"));
-
-                        player.setDisplayName(format("&cFlash &7" + player.getName()));
-                        player.sendMessage(format("&bYou have picked the &3Flash &bclass"));
+                        setAttribute(player, "FLASH");
 
                         break;
                     case 43: // Super girl
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("SUPERGIRL"));
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("SUPERGIRL"));
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("SUPERGIRL"));
-                        player.setAllowFlight(true);
-
-                        player.setDisplayName(format("&cSuper Girl &7" + player.getName()));
-                        player.sendMessage(format("&bYou have picked the &3Super Girl &bclass"));
+                        setAttribute(player, "SUPERGIRL");
 
                         break;
                     case 44: // Batman
 
-                        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth("BATMAN"));
-                        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed("BATMAN"));
-                        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage("BATMAN"));
-
-                        player.setDisplayName(format("&cBatman &7" + player.getName()));
-                        player.sendMessage(format("&bYou have picked the &3Batman &bclass"));
+                        setAttribute(player, "BATMAN");
 
                         break;
                 }
@@ -141,19 +94,27 @@ public class WardrobeListener implements Listener{
 
     }
 
+    public void setAttribute(Player player, String superHero) {
+        player.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(configManager.getHealth(superHero));
+        player.getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(configManager.getSpeed(superHero));
+        player.getAttribute(Attribute.GENERIC_ATTACK_DAMAGE).setBaseValue(configManager.getDamage(superHero));
+
+        player.setDisplayName(format("&c" + superHero + "&7 " + player.getName()));
+        player.sendMessage(format("&bYou have picked the &3" + superHero + " &bclass"));
+    }
+
     public void giveArmor(Player player, String name) {
         ItemStack helmet = new ItemStack(Material.LEATHER_HELMET);
         ItemMeta helmetMeta = helmet.getItemMeta();
 
         switch (name) {
             case "CIVLIAN":
-                System.out.println("dont use that");
+                System.out.println(ChatColor.RED + "Why did you pick this?");
                 break;
             case "HULK":
                 helmetMeta.setDisplayName("Hulk Helmet");
                 helmet.setItemMeta(helmetMeta);
                 player.getInventory().setHelmet(helmet);
-
 
                 break;
             case "DRSTRANGE":
